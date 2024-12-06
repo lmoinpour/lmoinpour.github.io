@@ -1,6 +1,6 @@
 ## Introduction 
 
-Through 40+ years of psychotherapy research, Dr. John Gottman developed multiple models to predict marital stability and divorce in couples [2]. In Gottman’s book, The Seven Principles for Making Marriage Work, he outlines four negative behaviors that are most likely to predict divorce. These behaviors are known as the “four horsemen” which are contempt for a partner, criticism of a partner’s personality, stonewalling, and defensiveness [2]. Through his research, he developed a Divorce Predictors Scale (DPS) survey that therapy practitioners use once trained at the Gottman Institute to predict if a couple will stay married or get a divorce. The survey contains 54 questions, with a 1 - 5 likert scale, intending to measure various aspects of the marital relationship connected to the four horsemen and other related research [3]. This paper intends to evaluate the survey, using machine learning classification models, to see if the survey questions do actually predict if a couple is likely to get divorced. 
+Through 40+ years of psychotherapy research, Dr. John Gottman developed multiple models to predict marital stability and divorce in couples [2]. In Gottman’s book, The Seven Principles for Making Marriage Work, he outlines four negative behaviors that are most likely to predict divorce. These behaviors are known as the “four horsemen” which are contempt for a partner, criticism of a partner’s personality, stonewalling, and defensiveness [2]. Through his research, he developed a Divorce Predictors Scale (DPS) survey that therapy practitioners use once trained at the Gottman Institute to predict if a couple will stay married or get a divorce. The survey contains 54 questions, with a 1 - 5 likert scale, intending to measure various aspects of the marital relationship connected to the four horsemen and other related research [3]. This paper intends to evaluate the survey, using machine learning classification models, to see if the survey questions do actually predict if a couple is likely to get divorced.   
 
 In running the models, we find that the Gottman survey contains many questions that are strong predictors of divorce. We created two predictive models that produced a 97.5% accuracy rate in prediction based on survey responses, using different subsets of the 54 questions provided. 
 
@@ -17,6 +17,7 @@ This was done in order to address multicollinearity between features given that 
 Specifically, the DPS questions are as provided in Table 1 for Model 1. The full set of questions is provided in the appendix. 
 
 __Table 1: Survey Questions Subsetted from 54 Original Questions__
+|     |
 | --- |
 |Atr 1. When one of our discussions goes in a bad direction, the issue does not extend.|
 |Atr 6. We don't have time at home as partners.|
@@ -33,39 +34,33 @@ __Table 1: Survey Questions Subsetted from 54 Original Questions__
 |Atr 49. I have nothing to do with what I've been accused of.|
 |Atr 51. I'm not the one who's wrong about problems at home.|
 |Atr 52. I wouldn't hesitate to tell her about my wife's inadequacy.|
-|Atr 54. I'm not afraid to tell her about my wife's incompetence.|
+|Atr 54. I'm not afraid to tell her about my wife's incompetence.|  
+
+<br>
 
 __Figure 1: Sample of the Dataset; n = 170, Features = 16__
-
-
-
+![](assets/IMG/fig_1_data.png)
 
 After removing the highly correlated features in the original data set, our new model only retained features to feature correlations under the 0.80 threshold. Features above the threshold are considered redundant. This feature correlation matrix reflects the correlation values of the sample used in the ML classification. 
 
+<br><br>
 __Figure 2: Feature Correlation Matrix of Sample__ 
+![](assets/IMG/feature_corr.png)
 
-
-
+<br><br>
 #### Model 2: Data Pre-processing
 
 Model 2 uses all 54 Features in the dataset, but instead uses Lasso Regularization to deal with multicollinearity between features. 
 
-
-![](assets/IMG/datapenguin.png){: width="500" }
-
-*Figure 1: Here is a caption for my diagram. This one shows a pengiun [1].*
-
+<br><br>
 ## Modelling
 
 Prior to starting the analysis, a Spearman’s Rank Correlation was performed to check for a linear relationship between features and the target outcome. It showed a linear relationship, with all 54 features having a statistically significant, high to medium correlation coefficient with respect to the target, ranging from 0.45 to 0.90. Given that a binary classification of the outcome is provided and we have a small sample size of m = 170, utilizing a supervised learning logistic regression model would provide the most direct insight into the relationship between each feature and probability of divorce.
 
-The sample data was normalized to improve the convergence of the algorithm. Min-max normalization was used to convert input features  xi  to be within the range 0 to 1. The converted feature  x′i  is given by:
-
-
-
-In code, we used the MinMax Scaler from scikit. After this, we created the training ( =0.80) and test sets ( =0.20) to prepare for our logistic regression. We used the formula below, and utilized scikit’s LogisticRegression package. 
-
-
+The sample data was normalized to improve the convergence of the algorithm. Min-max normalization was used to convert input features  xi  to be within the range 0 to 1. The converted feature  x′i  is given by:  
+![](assets/IMG/min_max.png)  
+In code, we used the MinMax Scaler from scikit. After this, we created the training ( =0.80) and test sets ( =0.20) to prepare for our logistic regression. We used the formula below, and utilized scikit’s LogisticRegression package.   
+![](assets/IMG/log_regression.png)  
 In running the initial analysis with a simple Logistic Regression, the data was being overfit to the model and had very high coefficient values. As a result, two different approaches were utilized to stabilize the coefficients, creating Models 1 and 2. 
 
 __Model 1:__
@@ -76,24 +71,36 @@ In this model, the feature set comprises 54 survey questions. Model 2 relies on 
 
 Other ML features used to evaluate the model were ROC (Receiver Operating Characteristic) curves, cross validation, confusion matrices, and coefficient analysis. 
 
-
+<br><br>
 ## Results
 
 Our model 1 & 2 results predicted whether or not someone will get a divorce with a 97% accuracy based on the different survey questions with a high AUC. More specifically, the Gottman DPS survey responses do provide enough insight for a prediction to be made. 
 
 __Table 2: Comparative results of Model 1 & 2__
 
-The training accuracy varies between the models but not significantly. The perfect AUC value indicates both models discriminate perfectly between divorce and married classes. However, it suggests that there may be overfitting or data simplicity issues with the models. This requires further investigation with other independent data sets to verify the model. Methodologically, the high AUC should have been addressed through the two different model approaches (e.g. different regularization approaches, and removal of the highly correlated features in model 1). With a smaller standard deviation, model 1 generalizes better across folds. 
+||	Model 1|	Model 2|
+|---|---|---|
+|Accuracy of model on Test Data	|0.970588	|0.9705|
+|Training Accuracy	|0.9632|	0.9852|
+|ROC curve AUC value|	1|	1|
+|Mean Cross Validation Score|	0.9647|	0.9529|
+|Standard Deviation of Cross Validation Score|	0.07|	0.0398|
+|M - number of examples|	170|	170|
+|N - number of features|	16|	54|
+|N - number of features after regularization	|16|	5|
+|Regularization Strength (alpha)	|L2  = 0.1	| L1 = 0.1|
+
+The training accuracy varies between the models but not significantly. The perfect AUC value indicates both models discriminate perfectly between divorce and married classes. However, it suggests that there may be overfitting or data simplicity issues with the models. This requires further investigation with other independent data sets to verify the model. Methodologically, the high AUC should have been addressed through the two different model approaches (e.g. different regularization approaches, and removal of the highly correlated features in model 1). With a smaller standard deviation, model 1 generalizes better across folds.
+
 In comparing both models, model 1 would be preferred given its smaller feature set and smaller standard deviation. It suggests that less survey questions are needed to predict likelihood of divorce. Model 2 retains all 54 questions, which potentially captures other relevant information that was removed in model 1. Both models use different sets of questions as highly predictive indicators in the models. 
 
-__Figure 3: Model 1 & 2’s Confusion Matrix Product Same Results__
-
-
+__Figure 3: Model 1 & 2’s Confusion Matrix Product Same Results__  
+![](assets/IMG/confusion_matrix.png)  
 With only one misclassification, the confusion matrix suggests strong performance and supports the AUC value of 1.0. 
-
+<br>
 
 __Figure 4: Model 1 Coefficient Matrix__ 
-
+![](assets/IMG/model1_coef.png)  
 The model identified Atr1 as the most influential predictor, followed by Atr 10, Atr 44, and Atr 31. These features play a significant predictive role in distinguishing between classes in this model. On the other hand, Atr46 has a lower coefficient value, indicating that it is a less influential predictor. 
 
 Features ranked in order of highest to lowest coefficients:
@@ -115,12 +122,13 @@ Features ranked in order of highest to lowest coefficients:
 |Atr 45. I'd rather stay silent than argue with my wife.|
 |Atr 46. Even if I'm right in the argument, I'm thirsty not to upset the other side.|
 
-__Figure 5: Model 2 Coefficient Matrix__ 
-
+<br><br>
+__Figure 5: Model 2 Coefficient Matrix__   
+![](assets/IMG/model2_coef.png)  
 
 The lasso regularization and logistic regression yielded a model that relies on only 5 features as contributing or influential predictors of class. Atr 40 has a significantly higher coefficient value, suggesting that the feature may simply be strongly correlated with the target variable, have low multicollinearity with other variables, or be a result of model overemphasis on this one feature. Atr 18 seems to contribute little influence to the model, but was significant enough to include.  
 
-These features are a set of 5 questions that were influential contributors to the model:
+Model 2 produced a set of 5 questions that were influential contributors to the model:
 | --- |
 |Atr 40. We're just starting a fight before I know what's going on.|
 |Atr 35. I can insult our discussions.|
@@ -128,7 +136,7 @@ These features are a set of 5 questions that were influential contributors to th
 |Atr 36. I can be humiliating when we argue.|
 |Atr 18. My wife and I have similar ideas about how marriage should be.|
 
-
+<br><br>
 ## Discussion
 
 Given the high multicollinearity of features to features within the data set and high predictive results of both models, it suggests that many of the Gottman questions might be significant indicators of divorce. Both models produce entirely separate different groupings of questions with no overlap, and yield a prediction accuracy of 97%. 
@@ -137,14 +145,14 @@ The implications of this research shows that psychologists can use these survey 
 
 The Gottman Institute has expanded their question subset into 100+ questions for respondents to take in over a 2 hour period [1]. Given the findings, it suggests that the survey length may be reduced significantly, if many questions are intended to help providers predict if a relationship is headed towards divorce.These survey questions can instead be refocused into diagnostics oriented, etc and on giving providers information that enables them to provide better care. 
 
-
+<br><br>
 ## Conclusion
 
 Overall, we can conclude that the Gottman Divorce Predictors Scale (DPS) survey does enable providers to predict if the couple is likely to get divorced or stay married. Originally, the survey questions were created to measure different aspects of the relationship, from compatibility and dynamics to conflict resolution strategies [4]. The ML models propose two different approaches for reducing the survey from 54 questions to 16 and 5 respectively, in order to predict which class the respondent belongs to with 97% accuracy.
 
 In future projects, the Gottman Institute can significantly reduce the number of survey questions being posed to respondents or choose to present alternative questions that would help couples therapists provide better care after reading survey results.  
 
-
+<br><br>
 ## References
 [1] “Gottman Connect.” Accessed: Dec. 05, 2024. [Online]. Available: https://gottmanconnect.com/gottman-assessment
 
@@ -154,7 +162,7 @@ In future projects, the Gottman Institute can significantly reduce the number of
 [4] “Predicting Marital Stability: An Approach for More Characteristics - The IAFOR Research Archive.” Accessed: Dec. 05, 2024. [Online]. Available: https://papers.iafor.org/submission75975/
 
 [5] “Divorce Predictors data set.” UCI Machine Learning Repository, 2019. doi: 10.24432/C53W5P.
-
+<br><br>
 ## Appendix
 
 Full Gottman Divorce Predictors Survey donated by UC Irvine 
