@@ -44,6 +44,33 @@ _Table 1: Survey Questions Subsetted from 54 Original Questions_
 | Atr 52. I wouldn’t hesitate to tell her about my wife’s inadequacy. |
 | Atr 54. I’m not afraid to tell her about my wife’s incompetence. |
 
+<table>
+  <thead>
+    <tr>
+      <th>Survey Questions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Atr 1. When one of our discussions goes in a bad direction, the issue does not extend.</td></tr>
+    <tr><td>Atr 6. We don’t have time at home as partners.</td></tr>
+    <tr><td>Atr 7. We are like two strangers who share the same environment at home rather than family.</td></tr>
+    <tr><td>Atr 10. My wife and most of our goals are common.</td></tr>
+    <tr><td>Atr 31. I feel aggressive when I argue with my wife.</td></tr>
+    <tr><td>Atr 42. When I argue with my wife, it’s only snaps and I don’t say a word.</td></tr>
+    <tr><td>Atr 43. I’m mostly thirsty to calm the environment a little bit.</td></tr>
+    <tr><td>Atr 44. Sometimes I think it’s good for me to leave home for a while.</td></tr>
+    <tr><td>Atr 45. I’d rather stay silent than argue with my wife.</td></tr>
+    <tr><td>Atr 46. Even if I’m right in the argument, I’m thirsty not to upset the other side.</td></tr>
+    <tr><td>Atr 47. When I argue with my wife, I remain silent because I am afraid of not being able to control my anger.</td></tr>
+    <tr><td>Atr 48. I feel right in our discussions.</td></tr>
+    <tr><td>Atr 49. I have nothing to do with what I’ve been accused of.</td></tr>
+    <tr><td>Atr 51. I’m not the one who’s wrong about problems at home.</td></tr>
+    <tr><td>Atr 52. I wouldn’t hesitate to tell her about my wife’s inadequacy.</td></tr>
+    <tr><td>Atr 54. I’m not afraid to tell her about my wife’s incompetence.</td></tr>
+  </tbody>
+</table>
+
+
 
 __Figure 1: Sample of the Dataset; n = 170, Features = 16__
 ![](assets/IMG/fig_1_data.png)
