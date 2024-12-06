@@ -1,11 +1,13 @@
+
+
 # Predicting Divorce with Gottman DPS Survey
 _By Leila Moinpour_
 
 ## Introduction 
 
-Through 40+ years of psychotherapy research, Dr. John Gottman developed multiple models to predict marital stability and divorce in couples [2]. In Gottman’s book, The Seven Principles for Making Marriage Work, he outlines four negative behaviors that are most likely to predict divorce. These behaviors are known as the “four horsemen” which are contempt for a partner, criticism of a partner’s personality, stonewalling, and defensiveness [2]. Through his research, he developed a Divorce Predictors Scale (DPS) survey that therapy practitioners use once trained at the Gottman Institute to predict if a couple will stay married or get a divorce. The survey contains 54 questions, with a 1 - 5 likert scale, intending to measure various aspects of the marital relationship connected to the four horsemen and other related research [3]. This paper intends to evaluate the survey, using machine learning classification models, to see if the survey questions do actually predict if a couple is likely to get divorced.   
+	Through 40+ years of psychotherapy research, Dr. John Gottman developed multiple models to predict marital stability and divorce in couples [2]. In Gottman’s book, The Seven Principles for Making Marriage Work, he outlines four negative behaviors that are most likely to predict divorce. These behaviors are known as the “four horsemen” which are contempt for a partner, criticism of a partner’s personality, stonewalling, and defensiveness [2]. Through his research, he developed a Divorce Predictors Scale (DPS) survey that therapy practitioners use once trained at the Gottman Institute to predict if a couple will stay married or get a divorce. The survey contains 54 questions, with a 1 - 5 likert scale, intending to measure various aspects of the marital relationship connected to the four horsemen and other related research [3]. This paper intends to evaluate the survey, using machine learning classification models, to see if the survey questions do actually predict if a couple is likely to get divorced.   
 
-In running the models, we find that the Gottman survey contains many questions that are strong predictors of divorce. We created two predictive models that produced a 97.5% accuracy rate in prediction based on survey responses, using different subsets of the 54 questions provided. 
+	In running the models, we find that the Gottman survey contains many questions that are strong predictors of divorce. We created two predictive models that produced a 97.5% accuracy rate in prediction based on survey responses, using different subsets of the 54 questions provided. 
 
 
 ## Data
@@ -41,7 +43,6 @@ __Table 1: Survey Questions Subsetted from 54 Original Questions__
 |Atr 51. I'm not the one who's wrong about problems at home.|
 |Atr 52. I wouldn't hesitate to tell her about my wife's inadequacy.|
 |Atr 54. I'm not afraid to tell her about my wife's incompetence.|  
-
 <br>
 
 __Figure 1: Sample of the Dataset; n = 170, Features = 16__
@@ -49,11 +50,11 @@ __Figure 1: Sample of the Dataset; n = 170, Features = 16__
 
 After removing the highly correlated features in the original data set, our new model only retained features to feature correlations under the 0.80 threshold. Features above the threshold are considered redundant. This feature correlation matrix reflects the correlation values of the sample used in the ML classification. 
 
-<br><br>
+<br>
 __Figure 2: Feature Correlation Matrix of Sample__ 
 ![](assets/IMG/feature_corr.png)
 
-<br><br>
+<br>
 #### Model 2: Data Pre-processing
 
 Model 2 uses all 54 Features in the dataset, but instead uses Lasso Regularization to deal with multicollinearity between features. 
