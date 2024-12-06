@@ -9,6 +9,8 @@ In running the models, we find that the Gottman survey contains many questions t
 
 The DPS data was donated in July 2019 to UC Irvine’s ML Repository [5]. Respondents answered 54 relationship questions on a scale of 1 to 5. The dataset contained 170 instances, consisting of 84 (49%) divorced and 86 (51%) married responses. Questions varied in scale types, utilizing frequency questions (e.g. “Never - 1” and “Always - 5”) and agreement questions (“Strongly Disagree - 1” and “Strongly Agree - 5”). The target variable was provided, with 2 classes indicating whether or not the respondent later got divorced (e.g., "yes" and "no", or 1 and 0) [5]. Additionally, the likert responses came already normalized from 0 - 4 instead of 1 to 5 and pre-processed with respect to removing NA values. A caveat for this paper is that some of the questions themselves seemed to have some significant grammatical errors. If this study were to be replicated, the data needs to be collected from the Gottman Institute or original researchers directly. 
 
+[Link to ML Code](https://colab.research.google.com/drive/1uAk6AZ1CN1QjFoz7_lxrqYTia0-MdHL6?usp=sharing)
+
 #### Model 1: Data Pre-processing
 
 In further pre-processing of the data, a correlation based feature selection analysis was done in order to remove features highly correlated with one another. This removed any features with features to target correlations below 0.2 or feature to feature correlations below 0.8. As a result, only 16 survey questions (features) remained in the ML sample we used to perform a logistic regression analysis with. 
