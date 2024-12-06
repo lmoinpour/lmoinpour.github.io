@@ -55,7 +55,7 @@ __Figure 2: Feature Correlation Matrix of Sample__
 Model 2 uses all 54 Features in the dataset, but instead uses Lasso Regularization to deal with multicollinearity between features. 
 
 <br><br>
-## Modelling
+## Modeling
 
 Prior to starting the analysis, a Spearman’s Rank Correlation was performed to check for a linear relationship between features and the target outcome. It showed a linear relationship, with all 54 features having a statistically significant, high to medium correlation coefficient with respect to the target, ranging from 0.45 to 0.90. Given that a binary classification of the outcome is provided and we have a small sample size of m = 170, utilizing a supervised learning logistic regression model would provide the most direct insight into the relationship between each feature and probability of divorce.
 
