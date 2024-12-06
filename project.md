@@ -22,7 +22,8 @@ This was done in order to address multicollinearity between features given that 
 Specifically, the DPS questions are as provided in Table 1 for Model 1. The full set of questions is provided in the appendix. 
 
 __Table 1: Survey Questions Subsetted from 54 Original Questions__
-|     |
+
+| Survey Questions |
 | --- |
 |Atr 1. When one of our discussions goes in a bad direction, the issue does not extend.|
 |Atr 6. We don't have time at home as partners.|
@@ -109,7 +110,7 @@ __Figure 4: Model 1 Coefficient Matrix__
 The model identified Atr1 as the most influential predictor, followed by Atr 10, Atr 44, and Atr 31. These features play a significant predictive role in distinguishing between classes in this model. On the other hand, Atr46 has a lower coefficient value, indicating that it is a less influential predictor. 
 
 _Model 1 Features ranked in order of highest to lowest coefficients:_
-|     |
+| Survey Questions |
 | --- |
 |Atr 1. When one of our discussions goes in a bad direction, the issue does not extend.|
 |Atr 10. I enjoy traveling with my wife.|
@@ -135,7 +136,7 @@ __Figure 5: Model 2 Coefficient Matrix__
 The lasso regularization and logistic regression yielded a model that relies on only 5 features as contributing or influential predictors of class. Atr 40 has a significantly higher coefficient value, suggesting that the feature may simply be strongly correlated with the target variable, have low multicollinearity with other variables, or be a result of model overemphasis on this one feature. Atr 18 seems to contribute little influence to the model, but was significant enough to include.  
 
 _Model 2 produced a set of 5 questions that were influential contributors to the model:_
-|     |
+| Survey Questions |
 | --- |
 |Atr 40. We're just starting a fight before I know what's going on.|
 |Atr 35. I can insult our discussions.|
