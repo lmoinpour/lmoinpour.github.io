@@ -49,12 +49,12 @@ __Figure 1: Sample of the Dataset; n = 170, Features = 16__
 ![](assets/IMG/fig_1_data.png)
 
 After removing the highly correlated features in the original data set, our new model only retained features to feature correlations under the 0.80 threshold. Features above the threshold are considered redundant. This feature correlation matrix reflects the correlation values of the sample used in the ML classification. 
-
 <br>
+
 __Figure 2: Feature Correlation Matrix of Sample__ 
 ![](assets/IMG/feature_corr.png)
-
 <br>
+
 #### Model 2: Data Pre-processing
 
 Model 2 uses all 54 Features in the dataset, but instead uses Lasso Regularization to deal with multicollinearity between features. 
