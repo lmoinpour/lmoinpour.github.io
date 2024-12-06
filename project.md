@@ -43,7 +43,7 @@ _Table 1: Survey Questions Subsetted from 54 Original Questions_
 |Atr 51. I'm not the one who's wrong about problems at home.|
 |Atr 52. I wouldn't hesitate to tell her about my wife's inadequacy.|
 |Atr 54. I'm not afraid to tell her about my wife's incompetence.|  
-<br>
+
 
 __Figure 1: Sample of the Dataset; n = 170, Features = 16__
 ![](assets/IMG/fig_1_data.png)
