@@ -26,7 +26,7 @@ Specifically, the DPS questions are as provided in Table 1 for Model 1. The full
 _Table 1: Survey Questions Subsetted from 54 Original Questions_
 
 | Survey Questions |
-| --- |
+|---|
 |Atr 1. When one of our discussions goes in a bad direction, the issue does not extend.|
 |Atr 6. We don't have time at home as partners.|
 |Atr 7. We are like two strangers who share the same environment at home rather than family.|
