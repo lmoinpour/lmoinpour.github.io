@@ -8,7 +8,7 @@ _By Leila Moinpour_
 Through 40+ years of psychotherapy research, Dr. John Gottman developed multiple models to predict marital stability and divorce in couples [2]. In Gottman’s book, The Seven Principles for Making Marriage Work, he outlines four negative behaviors that are most likely to predict divorce. These behaviors are known as the “four horsemen” which are contempt for a partner, criticism of a partner’s personality, stonewalling, and defensiveness [2]. Through his research, he developed a Divorce Predictors Scale (DPS) survey that therapy practitioners use once trained at the Gottman Institute to predict if a couple will stay married or get a divorce. The survey contains 54 questions, with a 1 - 5 likert scale, intending to measure various aspects of the marital relationship connected to the four horsemen and other related research [3]. This paper intends to evaluate the survey, using machine learning classification models, to see if the survey questions do actually predict if a couple is likely to get divorced.   
 
 In running the models, we find that the Gottman survey contains many questions that are strong predictors of divorce. We created two predictive models that produced a 97.5% accuracy rate in prediction based on survey responses, using different subsets of the 54 questions provided. 
-
+<br>
 
 ## Data
 
@@ -24,6 +24,7 @@ This was done in order to address multicollinearity between features given that 
 Specifically, the DPS questions are as provided in Table 1 for Model 1. The full set of questions is provided in the appendix. 
 
 __Table 1: Survey Questions Subsetted from 54 Original Questions__  
+
 
 | Survey Questions |
 | --- |
