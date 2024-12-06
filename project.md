@@ -23,7 +23,7 @@ This was done in order to address multicollinearity between features given that 
 
 Specifically, the DPS questions are as provided in Table 1 for Model 1. The full set of questions is provided in the appendix. 
 
-__Table 1: Survey Questions Subsetted from 54 Original Questions__
+_Table 1: Survey Questions Subsetted from 54 Original Questions_
 
 | Survey Questions |
 | --- |
