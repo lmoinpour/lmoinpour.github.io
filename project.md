@@ -1,7 +1,4 @@
-
-
-# Predicting Divorce with Gottman DPS Survey
-_By Leila Moinpour_
+#
 
 ## Introduction 
 
