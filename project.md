@@ -24,26 +24,6 @@ This was done in order to address multicollinearity between features given that 
 Specifically, the DPS questions are as provided in Table 1 for Model 1. The full set of questions is provided in the appendix. 
 
 _Table 1: Survey Questions Subsetted from 54 Original Questions_
-
-| Survey Questions |
-|---|
-|Atr 1. When one of our discussions goes in a bad direction, the issue does not extend.|
-|Atr 6. We don't have time at home as partners.|
-|Atr 7. We are like two strangers who share the same environment at home rather than family.|
-|Atr 10. My wife and most of our goals are common.|
-|Atr 31. I feel aggressive when I argue with my wife.|
-|Atr 42. When I argue with my wife, it's only snaps and I don't say a word.|
-|Atr 43. I'm mostly thirsty to calm the environment a little bit.|
-|Atr 44. Sometimes I think it's good for me to leave home for a while.|
-|Atr 45. I'd rather stay silent than argue with my wife.|
-|Atr 46. Even if I'm right in the argument, I'm thirsty not to upset the other side.|
-|Atr 47. When I argue with my wife, I remain silent because I am afraid of not being able to control my anger.|
-|Atr 48. I feel right in our discussions.|
-|Atr 49. I have nothing to do with what I've been accused of.|
-|Atr 51. I'm not the one who's wrong about problems at home.|
-|Atr 52. I wouldn't hesitate to tell her about my wife's inadequacy.|
-|Atr 54. I'm not afraid to tell her about my wife's incompetence.|  
-
 | Survey Questions | 
 |------------------|
 | Atr 1. When one of our discussions goes in a bad direction, the issue does not extend. |
@@ -131,7 +111,7 @@ The model identified Atr1 as the most influential predictor, followed by Atr 10,
 _Model 1 Features ranked in order of highest to lowest coefficients:_  
 
 | Survey Questions |
-| --- |
+| ---------------- |
 |Atr 1. When one of our discussions goes in a bad direction, the issue does not extend.|
 |Atr 10. I enjoy traveling with my wife.|
 |Atr 44. When I argue with my wife, it's only snaps and I don't say a word.|
@@ -158,7 +138,7 @@ The lasso regularization and logistic regression yielded a model that relies on 
 _Model 2 produced a set of 5 questions that were influential contributors to the model:_ 
 
 | Survey Questions |
-| --- |
+| ---------------- |
 |Atr 40. We're just starting a fight before I know what's going on.|
 |Atr 35. I can insult our discussions.|
 |Atr 5. The time I spent with my wife is special for us.|
