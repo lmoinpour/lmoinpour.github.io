@@ -1,5 +1,5 @@
 ## Predicting Divorce with Gottman DPS Survey
-An ML project exploring a survey based dataset utilizing a binary classification model!  
+An [ML project](https://colab.research.google.com/drive/1uAk6AZ1CN1QjFoz7_lxrqYTia0-MdHL6?usp=sharing) exploring a survey based dataset utilizing a binary classification model!  
 
 ## Introduction 
 
